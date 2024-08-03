@@ -1,0 +1,9 @@
+2024-07-23 14:30:09.123595-07:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]* FROM tracker_items where id=2"; expected "identifier"; SQL statement:
+delete * FROM tracker_items where id=2 [42001-224]
+2024-07-23 14:30:42.924085-07:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM TRACKER_ITEMS WHERE ID=2"; expected "identifier"; SQL statement:
+DELETE * FROM TRACKER_ITEMS WHERE ID=2 [42001-224]
+2024-07-23 14:31:58.388410-07:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]* FROM TRACKER_ITEMS where id = 2"; expected "identifier"; SQL statement:
+delete * FROM TRACKER_ITEMS where id = 2 [42001-224]

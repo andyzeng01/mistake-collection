@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-2">
+      <p><a class="btn btn-outline-success" href="/">
+        <i class="bi bi-arrow-left-square-fill"></i> Back</a>
+    </div>
+    <div class="col-6">
+      <h2>Edit Tracker</h2>
+      <form action="#" th:action="@{/tracker/{id}(id=${tracker.id})}" th:object="${tracker}" method="POST">
+
+        <div class="form-group">
+          <label for="mistake">Mistake</label>
+          <Input class="form-control"
+                 type="text"
+                 th:field="*{mistake}"
+                 id="mistake"
+                 placeholder="Mistake"
+          >
+
+          <br>
+          <label>Occurrences</label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"
+                   type="radio"
+                   th:field="*{occurrences}"
+                   th:checked="${occurrences == 'Rare(1+)'}"
+                   value="Rare(1+)"
+                   id="occurrenceRadio1"
+            />
+            <label class="form-check-label" for="occurrenceRadio1">Rare(1+)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"
+                   type="radio"
+                   th:field="*{occurrences}"
+                   th:checked="${occurrences == 'Uncommon(3+)'}"
+                   value="Uncommon(3+)"
+                   id="occurrenceRadio3"
+            />
+            <label class="form-check-label" for="occurrenceRadio3">Uncommon(3+)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"
+                   type="radio"
+                   th:field="*{occurrences}"
+                   th:checked="${occurrences == 'Common(5+)'}"
+                   value="Common(5+)"
+                   id="occurrenceRadio5"
+            />
+            <label class="form-check-label" for="occurrenceRadio5">Common(5+)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input"
+                   type="radio"
+                   th:field="*{occurrences}"
+                   th:checked="${occurrences == 'Very Common(8+)'}"
+                   value="Very Common(8+)"
+                   id="occurrenceRadio8"
+            />
+            <label class="form-check-label" for="occurrenceRadio8">Very Common(8+)</label>
+          </div>
+
+          <br>
+          <br>
+          <label for="feedback">Feedback</label>
+          <br>
+          <input class="form-control"
+                 type="text"
+                 th:field="*{feedback}"
+                 id="feedback"
+                 placeholder="Feedback"
+          />
+
+          <input type="hidden" th:field="*{createdAt}" />
+          <input type="hidden" th:field="*{updatedAt}" />
+
+
+          <br>
+          <button type="submit" class="btn btn-outline-success">
+            <i class="bi bi-plus-square-fill"></i> Update
+          </button>
+
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+</body>
+</html>
